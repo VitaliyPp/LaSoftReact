@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 200px auto 0 auto;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.footer img {
+  height: 32px;
+  width: auto;
+  margin-left: 12px;
+}
