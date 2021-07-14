@@ -6,21 +6,27 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import ImagesData from '../imagesData/images';
-
+import '../style/shop.css'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    display: 'flex',
+    flexFlow: 'wrap',
+    marginTop: '50px',
+    justifyContent: 'space-evenly',
+  },
+  card: {
+    width: 'auto',
   },
 });
 
-export default function ImgMediaCard() {
+export default function ShopList() {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       {ImagesData.map((img) => (
-        <CardActionArea>
+        <CardActionArea className={classes.card}>
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
@@ -30,7 +36,7 @@ export default function ImgMediaCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            item {img.id}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {img.price}$

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from './components/Header'
-import ImgMediaCard from './components/ImageList'
+import ShopList from './components/ShopList'
 import SingleLineImageList from './components/MainPage'
 import Footer from './components/Footer'
 
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <div className="Routing">
           <Route path='/' exact component={SingleLineImageList} />
-          <Route path='/shop' component={ImgMediaCard} />
+          <Route path='/shop' component={ShopList} />
         </div>  
         <Footer />
       </div>

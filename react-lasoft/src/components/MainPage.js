@@ -14,12 +14,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    margin: '50px auto 0 auto',
+    margin: '0 auto',
     width: '80%',
   },
   imageList: {
     flexWrap: 'nowrap',
     transform: 'translateZ(0)',
+    marginTop: '50px !important',
   },
   title: {
     color: theme.palette.primary.light,
