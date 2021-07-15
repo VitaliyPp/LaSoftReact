@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../images/home.png'
 import '../style/header.css'
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Products() {
   return(

@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, withTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '50px !important',
   },
   title: {
-    color: theme.palette.primary.light,
+    // color: theme.palette.primary.light,
     color: 'white',
   },
   titleBar: {

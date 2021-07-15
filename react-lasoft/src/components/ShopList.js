@@ -26,7 +26,7 @@ export default function ShopList() {
   return (
     <Card className={classes.root}>
       {ImagesData.map((img) => (
-        <CardActionArea className={classes.card}>
+        <CardActionArea className={classes.card} key={img.id}>
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
