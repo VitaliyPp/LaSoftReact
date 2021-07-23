@@ -1,8 +1,8 @@
 import React from 'react'
-import '../style/footer.css'
-import telegram from '../images/telegram.png'
-import facebook from '../images/facebook.png'
-import linkedin from '../images/linkedin.png'
+import './style.scss'
+import telegram from '../../assets/telegram.png'
+import facebook from '../../assets/facebook.png'
+import linkedin from '../../assets/linkedin.png'
 
 export default function Footer() {
   return (

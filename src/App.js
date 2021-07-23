@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from './components/Header'
-import ShopList from './components/ShopList'
-import SingleLineImageList from './components/MainPage'
+import ShopList from './components/Shop'
+import SingleLineImageList from './components/Landing'
 import Footer from './components/Footer'
 
 function App() {

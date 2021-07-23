@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../images/home.png'
-import '../style/header.css'
+import logo from '../../assets/home.png'
+import './style.scss'
 import { Link } from "react-router-dom";
 
 export default function Products() {

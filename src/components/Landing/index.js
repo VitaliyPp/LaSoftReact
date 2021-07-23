@@ -4,8 +4,8 @@ import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import IconButton from '@material-ui/core/IconButton';
-import ImagesData from '../imagesData/images';
-import '../style/main.css'
+import ImagesData from '../../assets/imagesData/images';
+import './style.scss'
 
 const useStyles = makeStyles((theme) => ({
   root: {

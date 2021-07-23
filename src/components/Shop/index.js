@@ -5,8 +5,8 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import ImagesData from '../imagesData/images';
-import '../style/shop.css'
+import ImagesData from '../../assets/imagesData/images';
+import './style.scss'
 
 const useStyles = makeStyles({
   root: {
