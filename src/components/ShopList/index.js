@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import ImagesData from '../../assets/imagesData/images';
 import './style.scss'
 
+import { Link } from 'react-router-dom'
+
 const useStyles = makeStyles({
   root: {
     display: 'flex',
@@ -25,24 +27,26 @@ export default function ShopList() {
 
   return (
     <Card className={classes.root}>
-      {ImagesData.map((img) => (
-        <CardActionArea className={classes.card} key={img.id}>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image={img.url}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            item {img.id}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {img.price}$
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      {ImagesData.map((img, id) => (
+        <Link to={`/shop/${id + 1}`}>
+          <CardActionArea className={classes.card} key={img.id}>
+            <CardMedia
+              component="img"
+              alt="Contemplative Reptile"
+              height="140"
+              image={img.url}
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                item {img.id}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {img.price}$
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Link>
       ))}
     </Card>
   );
