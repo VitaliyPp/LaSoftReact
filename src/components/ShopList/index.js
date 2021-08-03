@@ -1,53 +1,64 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import ImagesData from '../../assets/imagesData/images';
-import './style.scss'
-
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { 
+  makeStyles, 
+  Card, 
+  CardActionArea, 
+  CardContent, 
+  CardMedia, 
+  Typography, 
+} from '@material-ui/core';
+import './style.scss';
 
 const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexFlow: 'wrap',
-    marginTop: '50px',
+    margin: '50px auto',
     justifyContent: 'space-evenly',
   },
   card: {
-    width: 'auto',
+    width: '200px',
+    height: '250px',
   },
+  cardText: {
+    textDecoration: 'none',
+    color: '#000',
+  }
 });
 
-export default function ShopList() {
+export const PostsList = () => {
+  const posts = useSelector((state) => state.posts);
   const classes = useStyles();
+
+  const renderedPosts = posts.map((post) => {
+    return (
+      <Link to={`/shop/${post.id}`} className={classes.cardText} key={post.id}>
+        <CardActionArea className={classes.card}>
+          <CardMedia
+            component="img"
+            alt="Contemplative Reptile"
+            height="140"
+            image={post.url}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              item {post.id}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {post.price}$
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
+    )
+  })
 
   return (
     <Card className={classes.root}>
-      {ImagesData.map((img, id) => (
-        <Link to={`/shop/${id + 1}`}>
-          <CardActionArea className={classes.card} key={img.id}>
-            <CardMedia
-              component="img"
-              alt="Contemplative Reptile"
-              height="140"
-              image={img.url}
-              title="Contemplative Reptile"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                item {img.id}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {img.price}$
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Link>
-      ))}
+      {renderedPosts}
     </Card>
-  );
+  )
 }

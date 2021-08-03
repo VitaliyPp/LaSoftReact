@@ -1,4 +1,6 @@
-let ImagesData = [
+import { createSlice } from '@reduxjs/toolkit'
+
+let initialState = [
   {
     id: 1,
     url: 'https://picsum.photos/id/1/200/300',
@@ -121,4 +123,9 @@ let ImagesData = [
   },
 ]
 
-export default ImagesData;
+const postsSlice = createSlice({
+  name: 'posts',
+  initialState,
+})
+
+export default postsSlice.reducer

@@ -1,10 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import ImageList from '@material-ui/core/ImageList';
-import ImageListItem from '@material-ui/core/ImageListItem';
-import ImageListItemBar from '@material-ui/core/ImageListItemBar';
-import IconButton from '@material-ui/core/IconButton';
-import ImagesData from '../../assets/imagesData/images';
+import { useSelector } from 'react-redux'
+import { 
+  makeStyles, 
+  ImageList, 
+  ImageListItem, 
+  ImageListItemBar, 
+  IconButton 
+} from '@material-ui/core';
 import './style.scss'
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '50px !important',
   },
   title: {
-    // color: theme.palette.primary.light,
     color: 'white',
   },
   titleBar: {
@@ -34,11 +35,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SingleLineImageList() {
   const classes = useStyles();
+  const posts = useSelector((state) => state.posts);
 
   return (
     <div className={classes.root}>
       <ImageList className={classes.imageList} cols={2.5}>
-        {ImagesData.map((item) => (
+        {posts.map((item) => (
           <ImageListItem key={item.url}>
             <img src={item.url} alt={item.id} />
             <ImageListItemBar
@@ -57,7 +59,7 @@ export default function SingleLineImageList() {
         ))}
       </ImageList>
       <ImageList className={classes.imageList} cols={2.5}>
-        {ImagesData.map((item) => (
+        {posts.map((item) => (
           <ImageListItem key={item.url}>
             <img src={item.url} alt={item.id} />
             <ImageListItemBar
